@@ -1,0 +1,60 @@
+[versions]
+
+kotlin = "1.9.20"
+agp = "8.1.2"
+compose = "1.5.10"
+androidx-appcompat = "1.6.1"
+androidx-activityCompose = "1.7.2"
+compose-uitooling = "1.5.1"
+voyager = "1.0.0-rc10"
+composeImageLoader = "1.7.0"
+kotlinx-coroutines = "1.7.3"
+ktor = "2.3.5"
+kotlinx-serialization = "1.6.0"
+kodein = "7.19.0"
+composeIcons = "1.1.0"
+ktorfit = "1.10.1"
+ksp = "1.9.20-1.0.14"
+lyricist = "1.6.2"
+
+[libraries]
+
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+androidx-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+compose-uitooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-uitooling" }
+voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
+voyager-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
+voyager-kodein = { module = "cafe.adriel.voyager:voyager-kodein", version.ref = "voyager" }
+composeImageLoader = { module = "io.github.qdsfdhvh:image-loader", version.ref = "composeImageLoader" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+ktor-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+kodein-core = { module = "org.kodein.di:kodein-di", version.ref = "kodein" }
+kodein-configurable = { module = "org.kodein.di:kodein-di-conf", version.ref = "kodein" }
+kodein-compose = { module = "org.kodein.di:kodein-di-framework-compose", version.ref = "kodein" }
+composeIcons-tablerIcons = { module = "br.com.devsrsouza.compose.icons:tabler-icons", version.ref = "composeIcons" }
+ktorfit-core = { module = "de.jensklingenberg.ktorfit:ktorfit-lib-light", version.ref = "ktorfit" }
+ktorfit-ksp = { module = "de.jensklingenberg.ktorfit:ktorfit-ksp", version.ref = "ktorfit" }
+lyricist-compose = { module = "cafe.adriel.lyricist:lyricist", version.ref = "lyricist" }
+lyricist-processor = { module = "cafe.adriel.lyricist:lyricist-processor", version.ref = "lyricist" }
+
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+
+[plugins]
+
+multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ktorfit = { id = "de.jensklingenberg.ktorfit", version.ref = "ktorfit" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
