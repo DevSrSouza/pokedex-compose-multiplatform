@@ -34,7 +34,7 @@ presentation/
   strings
 
 
-### Current stage
+### Current state of the project
 
 <img width="434" alt="Screenshot 2023-11-21 at 09 29 34" src="https://github.com/DevSrSouza/pokedex-compose-multiplatform/assets/29736164/0654b187-ea0f-4f31-97be-8445d24e8325">
 
