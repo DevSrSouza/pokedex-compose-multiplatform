@@ -21,6 +21,7 @@ To run the application on iPhone device/simulator:
 
 ### Feature Architecture
 
+```
 data/
   ktorfit api
   response models
@@ -32,6 +33,7 @@ presentation/
   steps
   components
   strings
+```
 
 
 ### Current state of the project
