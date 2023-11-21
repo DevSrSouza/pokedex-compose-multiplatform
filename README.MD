@@ -34,3 +34,10 @@ presentation/
   strings
 
 
+### Current stage
+
+<img width="434" alt="Screenshot 2023-11-21 at 09 29 34" src="https://github.com/DevSrSouza/pokedex-compose-multiplatform/assets/29736164/0654b187-ea0f-4f31-97be-8445d24e8325">
+
+<img width="436" alt="Screenshot 2023-11-21 at 09 29 47" src="https://github.com/DevSrSouza/pokedex-compose-multiplatform/assets/29736164/eccbfbef-2361-4f35-a9d5-c60762af8211">
+
+
