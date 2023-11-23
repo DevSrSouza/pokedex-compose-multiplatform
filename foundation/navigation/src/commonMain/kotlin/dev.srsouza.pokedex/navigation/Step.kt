@@ -35,7 +35,7 @@ abstract class Step : Screen {
 abstract class StepStateful<V : StepViewModel<S>, S> : Step() {
 
     @Composable
-    abstract fun rememberViewModel(): V
+    abstract fun initializeViewModel(): V
     
     @Composable
     abstract fun Content(
@@ -45,7 +45,7 @@ abstract class StepStateful<V : StepViewModel<S>, S> : Step() {
 
     @Composable
     final override fun Content() {
-        val viewModel = rememberViewModel()
+        val viewModel = initializeViewModel()
         val state by viewModel.state.collectAsState()
 
         StepStateHandler(

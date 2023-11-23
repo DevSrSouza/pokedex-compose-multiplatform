@@ -39,7 +39,7 @@ object PokemonListStep : StepStateful<PokemonListViewModel, PokemonListState>() 
         }
 
     @Composable
-    override fun rememberViewModel(): PokemonListViewModel {
+    override fun initializeViewModel(): PokemonListViewModel {
         val viewModel by rememberInstance<PokemonListViewModel>()
 
         LaunchedEffect(Unit) {
