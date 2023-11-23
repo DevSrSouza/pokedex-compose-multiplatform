@@ -1,6 +1,6 @@
-<img width="170" src="https://github.com/DevSrSouza/pokedex-compose-multiplatform/assets/29736164/82b0c6e0-5910-410b-bb7b-58ad7864857a"  alt="image"/>
+# Pokedex 
 
-# Pokedex
+<img width="170" src="https://github.com/DevSrSouza/pokedex-compose-multiplatform/assets/29736164/82b0c6e0-5910-410b-bb7b-58ad7864857a"  alt="image"/>
 
 Compose Multiplatform Pokedex app. [WIP]
 
