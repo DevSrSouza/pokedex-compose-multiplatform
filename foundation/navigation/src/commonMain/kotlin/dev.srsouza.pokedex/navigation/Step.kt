@@ -30,6 +30,14 @@ abstract class Step : Screen {
 
     open val headerOptions: HeaderOptions
         @Composable get() = remember { HeaderOptions() }
+
+    override fun hashCode(): Int {
+        return key.hashCode()
+    }
+
+    override fun equals(other: Any?): Boolean {
+        return (other as? Step)?.key == key
+    }
 }
 
 abstract class StepStateful<V : StepViewModel<S>, S> : Step() {
@@ -56,10 +64,6 @@ abstract class StepStateful<V : StepViewModel<S>, S> : Step() {
                 state = data,
             )
         }
-    }
-
-    override fun hashCode(): Int {
-        return key.hashCode()
     }
 }
 
