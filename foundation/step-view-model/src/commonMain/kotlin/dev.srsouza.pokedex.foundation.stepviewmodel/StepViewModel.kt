@@ -23,14 +23,19 @@ abstract class StepViewModel<T>(
     
     private val mutableStateFlow: MutableStateFlow<StepState<T>> = MutableStateFlow(initialState)
     val state: StateFlow<StepState<T>> = mutableStateFlow.asStateFlow()
+    val currentData: T get() = state.value.state
 
     public fun state(
+        shouldShowLoading: Boolean = true,
         action: suspend UpdateStateScope<T>.() -> Unit,
     ) {
         coroutineScope.launch(dispatcher) {
-            mutableStateFlow.update { currentState ->
-                currentState.copy(ui = StepUiState.Loading)
+            if(shouldShowLoading) {
+                mutableStateFlow.update { currentState ->
+                    currentState.copy(ui = StepUiState.Loading)
+                }
             }
+
             safeCatching {
                 val scope = UpdateStateScope<T> { updateCallback ->
                     mutableStateFlow.update { currentState ->
@@ -47,7 +52,7 @@ abstract class StepViewModel<T>(
                 mutableStateFlow.update { currentState ->
                     currentState.copy(
                         ui = StepUiState.Error(defaultErrorState(
-                            onRetry = { state(action) }
+                            onRetry = { state(action = action) }
                         ))
                     )
                 }

@@ -1,11 +1,17 @@
 package dev.srsouza.pokedex.features.pokemonList.data
 
+import dev.srsouza.foundation.core.safeCatching
 import dev.srsouza.foundation.serialization.Serialization
+import dev.srsouza.pokedex.features.pokemonList.data.PokemonListRepository.Companion.PAGE_LIMIT
 import dev.srsouza.pokedex.features.pokemonList.data.model.GraphQLJsonQuery
 import dev.srsouza.pokedex.features.pokemonList.data.model.PokemonSprites
 import dev.srsouza.pokedex.features.pokemonList.domain.PokemonListItem
 
 interface PokemonListRepository {
+    companion object {
+        const val PAGE_LIMIT = 50
+    }
+
     suspend fun list(offset: Int = 0): List<PokemonListItem>
 }
 
@@ -21,8 +27,10 @@ class PokemonListRepositoryImpl(
 
         val response = api.list(request)
 
-        return response.data.spritesAggregate.nodes.map { data ->
-            val spriteUrl = Serialization.json.decodeFromString<PokemonSprites>(data.spritesJson).spriteUrl
+        return response.data.spritesAggregate.nodes.mapNotNull { data ->
+            val spriteUrl = safeCatching { Serialization.json.decodeFromString<PokemonSprites>(data.spritesJson).spriteUrl }
+                .getOrNull()
+
             PokemonListItem(
                 id = data.pokemon.id,
                 name = data.pokemon.name,
@@ -36,9 +44,5 @@ class PokemonListRepositoryImpl(
         offset: Int,
     ): String {
         return "query $opName{pokemon_v2_pokemonsprites_aggregate(limit:$PAGE_LIMIT,offset:$offset){nodes{sprites,pokemon_v2_pokemon{id,name}}}}"
-    }
-
-    private companion object {
-        const val PAGE_LIMIT = 50
     }
 }
