@@ -12,6 +12,7 @@ kotlin {
             implementation(projects.foundation.theme)
             implementation(projects.foundation.network)
             implementation(projects.foundation.serialization)
+            implementation(projects.foundation.kodein)
             implementation(libs.ktorfit.core)
             implementation(libs.lyricist.compose)
 
@@ -21,7 +22,6 @@ kotlin {
             @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
             implementation(libs.voyager.navigator)
-            implementation(libs.voyager.kodein)
             implementation(libs.composeImageLoader)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.ktor.core)

@@ -6,6 +6,7 @@ include(
     ":androidApp",
     ":iosUmbrella",
 
+    ":foundation:kodein",
     ":foundation:core",
     ":foundation:serialization",
     ":foundation:network",

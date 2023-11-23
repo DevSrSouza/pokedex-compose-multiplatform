@@ -76,7 +76,7 @@ internal fun NavigationScaffold(
     ) { padding ->
         val sheetState = rememberModalBottomSheetState()
         val coroutineScope = rememberCoroutineScope()
-        val navigationScaffold = remember(sheetState, coroutineScope) {
+        val navigationScaffold = remember(coroutineScope) {
             NavigationScaffold(
                 coroutineScope = coroutineScope,
                 sheetState = sheetState

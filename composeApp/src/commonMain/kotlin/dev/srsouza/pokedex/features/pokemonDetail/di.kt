@@ -1,10 +1,10 @@
-package dev.srsouza.pokedex.features.pokemonList
+package dev.srsouza.pokedex.features.pokemonDetail
 
 import cafe.adriel.voyager.core.annotation.ExperimentalVoyagerApi
-import dev.srsouza.pokedex.features.pokemonList.data.PokemonListApi
-import dev.srsouza.pokedex.features.pokemonList.data.PokemonListRepository
-import dev.srsouza.pokedex.features.pokemonList.data.PokemonListRepositoryImpl
-import dev.srsouza.pokedex.features.pokemonList.presentation.PokemonListViewModel
+import dev.srsouza.pokedex.features.pokemonDetail.data.PokemonDetailApi
+import dev.srsouza.pokedex.features.pokemonDetail.data.PokemonDetailRepository
+import dev.srsouza.pokedex.features.pokemonDetail.data.PokemonDetailRepositoryImpl
+import dev.srsouza.pokedex.features.pokemonDetail.presentation.PokemonDetailViewModel
 import dev.srsouza.pokedex.features.shared.data.PokedexNetwork
 import dev.srsouza.pokedex.foundation.kodein.bindScreenScopedSingleton
 import kotlinx.coroutines.Dispatchers
@@ -15,18 +15,18 @@ import org.kodein.di.scoped
 import org.kodein.di.singleton
 
 @OptIn(ExperimentalVoyagerApi::class)
-val pokemonListModule = DI.Module("pokemon-list") {
-    bindSingleton<PokemonListApi> {
+val pokemonDetailModule = DI.Module("pokemon-detail") {
+    bindSingleton<PokemonDetailApi> {
         PokedexNetwork.ktorfit
-            .create<PokemonListApi>()
+            .create<PokemonDetailApi>()
     }
-    bindSingleton<PokemonListRepository> {
-        PokemonListRepositoryImpl(
+    bindSingleton<PokemonDetailRepository> {
+        PokemonDetailRepositoryImpl(
             api = instance(),
         )
     }
     bindScreenScopedSingleton {
-        PokemonListViewModel(
+        PokemonDetailViewModel(
             repository = instance(),
             dispatcher = Dispatchers.Default,
         )

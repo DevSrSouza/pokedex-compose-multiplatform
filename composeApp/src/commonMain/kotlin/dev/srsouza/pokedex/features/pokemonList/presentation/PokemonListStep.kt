@@ -31,11 +31,13 @@ import cafe.adriel.lyricist.rememberStrings
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.seiko.imageloader.rememberImagePainter
+import dev.srsouza.pokedex.features.pokemonDetail.presentation.PokemonDetailStep
 import dev.srsouza.pokedex.features.pokemonList.domain.PokemonListItem
 import dev.srsouza.pokedex.foundation.components.circularProgressLoadingItem
 import dev.srsouza.pokedex.foundation.components.rememberLazyGridListPaging
 import dev.srsouza.pokedex.navigation.HeaderOptions
 import dev.srsouza.pokedex.navigation.StepStateful
+import org.kodein.di.compose.localDI
 import org.kodein.di.compose.rememberInstance
 
 object PokemonListStep : StepStateful<PokemonListViewModel, PokemonListState>() {
@@ -82,7 +84,7 @@ object PokemonListStep : StepStateful<PokemonListViewModel, PokemonListState>() 
                 PokemonCard(
                     pokemon = pokemon,
                     onClick = {
-                        // TODO: navigate to detail
+                        navigator.push(PokemonDetailStep(pokemonId = pokemon.id))
                     },
                     modifier = Modifier.padding(8.dp).animateItemPlacement(),
                 )

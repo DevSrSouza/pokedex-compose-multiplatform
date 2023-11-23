@@ -57,7 +57,6 @@ object HomeStep : Step() {
                             textAlign = TextAlign.Center,
                         )
                     }
-
                 }
             }
         }

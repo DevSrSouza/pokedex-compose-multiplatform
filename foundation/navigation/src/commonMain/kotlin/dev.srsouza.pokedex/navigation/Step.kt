@@ -57,6 +57,10 @@ abstract class StepStateful<V : StepViewModel<S>, S> : Step() {
             )
         }
     }
+
+    override fun hashCode(): Int {
+        return key.hashCode()
+    }
 }
 
 @Composable

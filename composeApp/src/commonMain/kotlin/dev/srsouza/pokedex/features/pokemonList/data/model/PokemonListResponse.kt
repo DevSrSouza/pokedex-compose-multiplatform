@@ -25,11 +25,6 @@ data class PokemonWithSpriteGQL(
 )
 
 @Serializable
-data class PokemonSprites(
-    @SerialName("front_default") val spriteUrl: String,
-)
-
-@Serializable
 data class PokemonNameResponseGQL(
     val id: String,
     val name: String,
