@@ -1,6 +1,7 @@
 # Pokedex
 
-![pokedex app](https://github.com/DevSrSouza/pokedex-compose-multiplatform/assets/29736164/82b0c6e0-5910-410b-bb7b-58ad7864857a)
+
+<img width="150" src="https://github.com/DevSrSouza/pokedex-compose-multiplatform/assets/29736164/82b0c6e0-5910-410b-bb7b-58ad7864857a"  alt="image"/>
 
 Compose Multiplatform Pokedex app. [WIP]
 
@@ -72,7 +73,7 @@ presentation/
 
 ### Current state of the project
 
-<img width="434" alt="Screenshot 2023-11-21 at 09 29 34" src="https://github.com/DevSrSouza/pokedex-compose-multiplatform/assets/29736164/0654b187-ea0f-4f31-97be-8445d24e8325">
+<img width="434" alt="image" src="https://github.com/DevSrSouza/pokedex-compose-multiplatform/assets/29736164/0654b187-ea0f-4f31-97be-8445d24e8325">
 
 <img width="437" alt="image" src="https://github.com/DevSrSouza/pokedex-compose-multiplatform/assets/29736164/52c3517e-a040-46f6-ac81-652a96cc4060">
 
