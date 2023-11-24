@@ -10,6 +10,6 @@ dependencies {
 
 android {
     defaultConfig {
-        applicationId = "dev.srsouza.pokedex.androidApp"
+        applicationId = "dev.srsouza.pokedex"
     }
 }

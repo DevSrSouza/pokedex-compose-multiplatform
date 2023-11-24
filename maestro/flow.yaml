@@ -1,0 +1,10 @@
+appId: dev.srsouza.pokedex
+---
+- launchApp
+- tapOn: "Pokemon List"
+- tapOn: "bulbasaur"
+- tapOn: "bulbasaur"
+- assertVisible: "Weight:"
+- assertVisible: "69"
+- assertVisible: "Grass"
+- assertVisible: "Poison"
