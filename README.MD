@@ -48,6 +48,7 @@ presentation/
 - Image Loading: [Compose ImageLoader](https://github.com/qdsfdhvh/compose-imageloader) ([Coil is not yet Multiplatform](https://github.com/coil-kt/coil/issues/842))
 - Json parsing: [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)
 - ViewModel + State: [Custom Implementation](https://github.com/DevSrSouza/pokedex-compose-multiplatform/tree/main/foundation/step-view-model/src/commonMain/kotlin/dev.srsouza.pokedex.foundation.stepviewmodel)
+- UI Integration Test: [Maestro](https://github.com/mobile-dev-inc/maestro)
 
 ### Modules explanations
 
