@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
+import dev.srsouza.convention.applyKtLint
 import dev.srsouza.convention.configureAndroid
 import dev.srsouza.convention.configureKmpAndroid
 import dev.srsouza.convention.configureKmp
@@ -12,6 +13,7 @@ class KotlinMultiplatformLibraryConventionPlugin : Plugin<Project> {
         with(target) {
             pluginManager.apply("org.jetbrains.kotlin.multiplatform")
             pluginManager.apply("com.android.library")
+            applyKtLint()
 
             configureKmp()
             configureKmpAndroid()

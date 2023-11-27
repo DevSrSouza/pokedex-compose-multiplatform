@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
+import dev.srsouza.convention.applyKtLint
 import dev.srsouza.convention.configureAndroid
 import dev.srsouza.convention.configureAndroidCompose
 import org.gradle.api.Plugin
@@ -10,6 +11,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         with(target) {
             pluginManager.apply("com.android.application")
             pluginManager.apply("org.jetbrains.kotlin.android")
+            applyKtLint()
 
             configureAndroid()
             configureAndroidCompose()

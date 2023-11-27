@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
+import dev.srsouza.convention.applyKtLint
 import dev.srsouza.convention.configureAndroid
 import dev.srsouza.convention.configureAndroidCompose
 import dev.srsouza.convention.configureKmp
@@ -14,6 +15,7 @@ class ComposeMultiplatformConventionPlugin : Plugin<Project> {
             pluginManager.apply("org.jetbrains.kotlin.multiplatform")
             pluginManager.apply("com.android.library")
             pluginManager.apply("org.jetbrains.compose")
+            applyKtLint()
 
             configureKmp()
             configureKmpAndroid()
