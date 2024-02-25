@@ -1,11 +1,8 @@
 package dev.srsouza.pokedex.features.pokemonList.data
 
-import dev.srsouza.foundation.core.safeCatching
-import dev.srsouza.foundation.serialization.Serialization
 import dev.srsouza.pokedex.features.pokemonList.data.PokemonListRepository.Companion.PAGE_LIMIT
 import dev.srsouza.pokedex.features.pokemonList.data.model.GraphQLJsonQuery
 import dev.srsouza.pokedex.features.pokemonList.domain.PokemonListItem
-import dev.srsouza.pokedex.features.shared.data.model.PokemonSprites
 
 interface PokemonListRepository {
     companion object {
@@ -28,14 +25,10 @@ class PokemonListRepositoryImpl(
         val response = api.list(request)
 
         return response.data.spritesAggregate.nodes.mapNotNull { data ->
-            val spriteUrl = safeCatching {
-                Serialization.json.decodeFromString<PokemonSprites>(data.spritesJson).spriteUrl
-            }.getOrNull()
-
             PokemonListItem(
                 id = data.pokemon.id,
                 name = data.pokemon.name,
-                spriteUrl = spriteUrl,
+                spriteUrl = data.sprites.spriteUrl,
             )
         }
     }

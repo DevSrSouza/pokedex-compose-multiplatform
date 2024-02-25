@@ -1,5 +1,6 @@
 package dev.srsouza.pokedex.features.pokemonList.data.model
 
+import dev.srsouza.pokedex.features.shared.data.model.PokemonSprites
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -20,7 +21,7 @@ data class PokemonSpritesAggregateGQL(
 
 @Serializable
 data class PokemonWithSpriteGQL(
-    @SerialName("sprites") val spritesJson: String,
+    @SerialName("sprites") val sprites: PokemonSprites,
     @SerialName("pokemon_v2_pokemon") val pokemon: PokemonNameResponseGQL,
 )
 

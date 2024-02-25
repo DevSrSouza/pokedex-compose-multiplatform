@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class PokemonSprites(
-    @SerialName("front_default") val spriteUrl: String,
+    @SerialName("front_default") val spriteUrl: String? = null,
 )
