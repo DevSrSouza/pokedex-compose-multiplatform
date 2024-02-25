@@ -1,3 +1,4 @@
+@file:Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
 package dev.srsouza.convention
 
 import com.android.build.gradle.BaseExtension
@@ -7,6 +8,8 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.get
+import org.jetbrains.compose.ComposeCompilerCompatibility
+import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
 
 internal fun Project.configureAndroid() {
     configure<BaseExtension> {
@@ -38,7 +41,8 @@ internal fun Project.configureAndroidCompose() {
     configure<BaseExtension> {
         buildFeatures.compose = true
         composeOptions {
-            kotlinCompilerExtensionVersion = "1.5.4"
+            //kotlinCompilerExtensionVersion = ComposeCompilerCompatibility.compilerVersionFor(getKotlinPluginVersion())
+            kotlinCompilerExtensionVersion = "1.5.10"
         }
     }
 }

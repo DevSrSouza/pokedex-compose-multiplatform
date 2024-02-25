@@ -18,7 +18,7 @@ class NavigatorScopeContext(
     override fun hashCode(): Int = uniqueId.hashCode()
 
     override fun equals(other: Any?): Boolean {
-        return (other as? NavigatorScopeContext?)?.uniqueId.equals(uniqueId)
+        return (other as? NavigatorScopeContext?)?.uniqueId?.equals(uniqueId) == true
     }
 
     public fun dispose() {
@@ -32,7 +32,7 @@ open class NavigatorLifecycleContext private constructor(
 ) : Scope<NavigatorScopeContext> {
     companion object multiItem : NavigatorLifecycleContext(::StandardScopeRegistry)
 
-    private val map = HashMap<NavigatorScopeContext, ScopeRegistry>()
+    private val map = mutableMapOf<NavigatorScopeContext, ScopeRegistry>()
 
     override fun getRegistry(context: NavigatorScopeContext): ScopeRegistry {
         return synchronizedIfNull(

@@ -32,7 +32,7 @@ private fun rememberNavigatorScopeContext(
         NavigatorScopeContext(
             uniqueId = navigator.key,
             onRegistryScope = { featureScope ->
-                NavigatorLifecycleStore.register(navigator) {
+                NavigatorLifecycleStore.get(navigator) {
                     NavigatorScopeLifecycle { featureScope.dispose() }
                 }
             }
@@ -52,7 +52,7 @@ private fun rememberScreenScopeContext(
             navigatorContext = navigatorScopeContext,
             uniqueId = step.key,
             onRegistryScope = { self ->
-                ScreenLifecycleStore.register(step) {
+                ScreenLifecycleStore.get(step) {
                     ScreenScopeLifecycleOwner {
                         self.dispose()
                     }

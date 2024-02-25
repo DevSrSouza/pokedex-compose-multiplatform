@@ -1,12 +1,12 @@
 [versions]
 
-kotlin = "1.9.20"
+kotlin = "1.9.22"
 agp = "8.1.2"
-compose = "1.5.10"
+compose = "1.6.0-rc03"
 androidx-appcompat = "1.6.1"
 androidx-activityCompose = "1.7.2"
 compose-uitooling = "1.5.1"
-voyager = "1.0.0-rc10"
+voyager = "1.1.0-alpha03"
 composeImageLoader = "1.7.0"
 kotlinx-coroutines = "1.7.3"
 ktor = "2.3.5"
@@ -14,7 +14,7 @@ kotlinx-serialization = "1.6.0"
 kodein = "7.19.0"
 composeIcons = "1.1.0"
 ktorfit = "1.10.1"
-ksp = "1.9.20-1.0.14"
+ksp = "1.9.22-1.0.17"
 lyricist = "1.6.2"
 ktlint-gradle = "11.6.1"
 
@@ -23,6 +23,7 @@ ktlint-gradle = "11.6.1"
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
 androidx-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 compose-uitooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose-uitooling" }
+compose-gradlePlugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "compose" }
 voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
 voyager-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
 voyager-kodein = { module = "cafe.adriel.voyager:voyager-kodein", version.ref = "voyager" }
